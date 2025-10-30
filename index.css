@@ -1,0 +1,305 @@
+/* --- NEW: Smooth Scroll & Custom Scrollbar --- */
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #1e1e24;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 10px;
+    border: 2px solid #1e1e24;
+}
+
+/* --- UPDATED: General Page Styles (Dark Mood) --- */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #1c1c1e 0%, #2a2a2f 100%);
+    min-height: 100vh; 
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0; /* Remove padding to allow nav to be full-width */
+    text-align: center;
+}
+
+/* --- NEW: Navigation Bar Styles --- */
+nav {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background: rgba(20, 20, 22, 0.85); /* Glassy nav */
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
+.nav-logo {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-links a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 1rem;
+    margin-left: 20px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #fff;
+}
+
+/* --- NEW: Section Styles --- */
+section {
+    padding: 60px 20px; /* Add padding here instead of on body */
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* --- Page Headings --- */
+h1 {
+    font-size: 2.2rem;
+    color: #ffffff;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #eee;
+    font-weight: 500;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
+    display: inline-block; /* Make border only as wide as text */
+}
+
+/* --- Home Section --- */
+.main-portrait {
+    max-width: 400px;
+    width: 90%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin: 20px 0;
+}
+
+#Tribute1 {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 20px auto; 
+    text-align: center;
+    color: #ccc;
+}
+
+/* --- NEW: Timeline Styles --- */
+.timeline {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* The vertical line */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #444;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+    padding-left: 50px; /* Space for the dot and line */
+    text-align: left;
+}
+
+.timeline-dot {
+    content: '';
+    position: absolute;
+    left: 8px; /* Center on the 2px line */
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #aaa;
+    border: 2px solid #1c1c1e;
+}
+
+.timeline-content {
+    background: rgba(255, 255, 255, 0.05); /* Glass */
+    border-radius: 8px;
+    padding: 15px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.timeline-content h3 {
+    margin: 0 0 5px 0;
+    color: #fff;
+}
+
+.timeline-content p {
+    margin: 0;
+    color: #ccc;
+}
+
+
+/* --- 3D Slider Styles (Unchanged) --- */
+.gallery {
+    position: relative;
+    width: 300px; 
+    height: 200px; 
+    margin: 60px auto;
+    perspective: 1000px; 
+}
+.carousel {
+    width: 100%; height: 100%;
+    position: absolute;
+    transform-style: preserve-3d; 
+    transition: transform 0.8s ease-in-out;
+}
+.carousel-slide {
+    position: absolute; width: 100%; height: 100%;
+    backface-visibility: hidden; 
+    border-radius: 8px;
+    overflow: hidden; 
+}
+.carousel-slide img {
+    width: 100%; height: 100%;
+    object-fit: cover; 
+    display: block;
+}
+.slider-btn {
+    position: absolute; top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white; padding: 8px 12px;
+    font-size: 1.5rem; cursor: pointer;
+    border-radius: 50%;
+    width: 40px; height: 40px;
+    line-height: 24px;
+    transition: background-color 0.3s;
+}
+.slider-btn:hover { background: rgba(255, 255, 255, 0.2); }
+#prevBtn { left: -20px; }
+#nextBtn { right: -20px; }
+
+
+/* --- Tributes Section (Glass Form) --- */
+#Send {
+    font-size: 1rem;
+    color: #aaa;
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+#tribute-form {
+    margin: 0; /* Form container has padding now */
+}
+
+#tribute-input {
+    width: 90%;
+    max-width: 400px;
+    padding: 12px;
+    font-size: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#tribute-input::placeholder { color: #bbb; }
+
+form input[type="submit"] {
+    font-size: 1rem; color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px 20px; border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+form input[type="submit"]:hover { background: rgba(255, 255, 255, 0.2); }
+
+
+/* --- NEW: Tribute Wall Styles --- */
+#tribute-wall {
+    max-width: 600px;
+    margin: 30px auto;
+    text-align: left;
+}
+
+.tribute-message {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    /* NEW: Animation for new messages */
+    animation: fadeIn 0.5s ease;
+}
+
+.tribute-message p {
+    font-size: 1.1rem;
+    color: #ddd;
+    margin: 0 0 5px 0;
+}
+
+.tribute-message small {
+    font-style: italic;
+    color: #999;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* --- NEW: Scroll Reveal Animation --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
